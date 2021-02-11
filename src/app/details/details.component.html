@@ -1,0 +1,49 @@
+<h4 class="heading">User Details</h4>
+<div *ngIf="user$" class="user-details">
+  <div class="breadcrumb">
+    <a routerLink="" [class.activated]="currentUrl == '/'">
+      <span>Users </span>
+    </a>
+    <h4>> {{ user$.name }}</h4>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="user-details-container">
+        <h6>Contact Info</h6>
+        <div><strong>Username:</strong> {{ user$.username }}</div>
+        <div><strong>Email:</strong><a href="mailto: {{user$.email}}"> {{ user$.email }}</a></div>
+        <div><strong>Phone:</strong><a href="javascript:void(0)"> {{ user$.phone }}</a></div>
+        <div>
+          <strong>Website:</strong>
+          <a href="http://{{user$.website}}" target="_blank"> {{ user$.website }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="user-details-container">
+        <h6>Address</h6>
+        <span> {{ user$.address.suite }}</span>
+        <span> {{ user$.address.street }},</span>
+        <span> {{ user$.address.city }},</span>
+        <span> {{ user$.address.zipcode }}</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="user-details-container">
+        <h6>Company</h6>
+        <div> {{ user$.company.name }}</div>
+        <div> {{ user$.company.bs }}</div>
+        <div class="catch-phrase"> "{{ user$.company.catchPhrase }}"</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="posts$ && user$">
+  <h4>Posts by {{user$.name}}</h4>
+  <div class="row">
+    <div class="posts-container col-md-4"  *ngFor="let post of posts$">
+      <div class="post-title">{{post.title}}</div>
+      <div>{{post.body}}</div>
+    </div>
+  </div>
+</div>

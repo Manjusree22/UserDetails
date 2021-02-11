@@ -1,0 +1,44 @@
+.user-container {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;  
+    }
+    label {
+        display: block;
+        width: 50%;
+        #search_user {
+            border: 1px solid #ced4da;
+            padding: 6px;
+        }
+        #sort_user {
+            border-radius: 0;
+        }
+    }
+    .search-wrapper {
+        display: inherit;
+        .search-label {
+            margin-right: 20px;
+        }
+    }
+}
+.details-color {
+    color: #595959;
+}
+.user-details-container {
+    border: 1px solid #ebebeb;
+    :nth-child(3n) {
+        background-color: #ebebeb;
+    }
+    .user-details-wrapper {
+        @media screen and (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;   
+        }
+        border-bottom: 1px solid #ebebeb;
+        padding: 10px;
+        a {
+            margin-top: 10px;
+        }
+    }
+}
